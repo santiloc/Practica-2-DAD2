@@ -3,10 +3,12 @@ package edu.ucam.utils;
 import org.json.JSONObject;
 
 import edu.ucam.beans.Alumno;
+import edu.ucam.beans.Asignatura;
 import edu.ucam.beans.Titulacion;
 
 public class ParserObject {
 
+	
 	public static Alumno JSONToAlumno(JSONObject alumnoJson) {
 		Alumno alumno = new Alumno();
 		
@@ -46,4 +48,23 @@ public class ParserObject {
 	
 		return jsonObject;
 	}
+	
+	
+	public static Asignatura JSONToAsignatura(JSONObject asignaturaJson) {
+		Asignatura asignatura = new Asignatura();
+		if(asignaturaJson.has("id"))
+			asignatura.setId(asignaturaJson.getInt("id"));
+		asignatura.setNombre(asignaturaJson.getString("nombre"));
+		asignatura.setCreditos(asignaturaJson.getInt("creditos"));
+		return asignatura;
+	}
+
+	public static JSONObject AsignaturaToJSON(Asignatura asig) {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("id", asig.getId());
+		jsonObject.put("nombre", asig.getNombre());
+		jsonObject.put("creditos", asig.getCreditos());
+		return jsonObject;
+	}
+	
 }
