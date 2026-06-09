@@ -128,6 +128,7 @@
 	<a href="index.jsp">Volver a Alumnos</a>
 	<br><br>
 	Formulario para gestionar titulaciones.<br>
+	
 	Id:<input type=text id="id" readonly><br>
 	Nombre:<input type=text id="nombre"><br>
 	Facultad:<input type=text id="facultad"><br>

@@ -15,6 +15,7 @@ import edu.ucam.utils.ParserObject;
 import edu.ucam.beans.*;
 import edu.ucam.database.DataBase;
 import edu.ucam.exception.ApiException;
+import edu.ucam.services.AlumnoService;
 import edu.ucam.services.TitulacionService;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
