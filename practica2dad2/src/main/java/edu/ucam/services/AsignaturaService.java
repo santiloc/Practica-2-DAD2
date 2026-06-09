@@ -32,7 +32,7 @@ public class AsignaturaService {
 		if(DataBaseAsignatura.dameAsignaturaPorId(asignatura.getId()) == null) {
 			throw new NotFoundException("No existe la asignatura con id " + asignatura.getId() + " para modificar");
 		}
-		return DataBaseAsignatura.alta(asignatura);
+		return DataBaseAsignatura.modificar(asignatura);
 	}
 
 	public boolean eliminar(int id) throws NotFoundException {
