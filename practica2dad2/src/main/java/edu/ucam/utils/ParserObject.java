@@ -4,6 +4,7 @@ import org.json.JSONObject;
 
 import edu.ucam.beans.Alumno;
 import edu.ucam.beans.Asignatura;
+import edu.ucam.beans.Profesor;
 import edu.ucam.beans.Titulacion;
 
 public class ParserObject {
@@ -64,6 +65,24 @@ public class ParserObject {
 		jsonObject.put("id", asig.getId());
 		jsonObject.put("nombre", asig.getNombre());
 		jsonObject.put("creditos", asig.getCreditos());
+		return jsonObject;
+	}
+	
+	public static Profesor JSONToProfesor(JSONObject profesorJSON) {
+		Profesor profesor = new Profesor();
+		if(profesorJSON.has("id"))
+			profesor.setId(profesorJSON.getInt("id"));
+		
+		profesor.setNombre(profesorJSON.getString("nombre"));
+		profesor.setApellido(profesorJSON.getString("apellido"));
+		return profesor;
+	}
+
+	public static JSONObject ProfesorToJSON(Profesor profe) {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("id", profe.getId());
+		jsonObject.put("nombre", profe.getNombre());
+		jsonObject.put("apellido", profe.getApellido());
 		return jsonObject;
 	}
 	

@@ -25,12 +25,23 @@ public class DataBaseAsignacion {
 
     public static boolean remove(int idAsignatura, int idProfesor) {
         if(asignaciones.containsKey(idAsignatura)) {
-            return asignaciones.get(idAsignatura).remove(Integer.valueOf(idProfesor));
+        	List<Integer> profesores = asignaciones.get(idAsignatura);
+        	if(profesores.contains(idProfesor)) {
+        		return asignaciones.get(idAsignatura).remove(Integer.valueOf(idProfesor));
+        	}
         }
+        
         return false;
     }
 
-    public static void eliminarAsignacionesPorAsignatura(int idAsignatura) {
-        asignaciones.remove(idAsignatura);
+    public static boolean eliminarAsignacionesPorAsignatura(int idAsignatura) {
+       if(asignaciones.containsKey(idAsignatura) ) {
+    	   asignaciones.remove(idAsignatura);
+    	   return true;
+       }
+       
+       return false;
     }
+    
+    
 }

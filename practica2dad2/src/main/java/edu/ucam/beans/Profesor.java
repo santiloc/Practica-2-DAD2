@@ -4,17 +4,22 @@ public class Profesor {
 
 	private int id;
 	private String nombre;
-	private String apellido;
+	private String apellido;	
 	
 	//Constructor
-	public Profesor() {
-		
+	public Profesor(int id, String nombre, String apellido) {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
 	}
+	
+	public Profesor() {}
 
+	//Getter and Setter
 	public int getId() {
 		return id;
 	}
-
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -34,8 +39,4 @@ public class Profesor {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
-	//Getter and Setter
-	
-	
 }

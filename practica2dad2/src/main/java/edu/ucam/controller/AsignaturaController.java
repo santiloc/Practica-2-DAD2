@@ -129,7 +129,7 @@ public class AsignaturaController {
 
 		if(!jsonRecibido.has("id")) {
 			JSONObject errorJSON = new JSONObject();
-			errorJSON.put("resultado", "Se debe enviar el id para modificar una titulacion");
+			errorJSON.put("resultado", "Se debe enviar el id para modificar una asignatura");
 			return Response.status(409).entity(errorJSON.toString()).build();
 		}
 

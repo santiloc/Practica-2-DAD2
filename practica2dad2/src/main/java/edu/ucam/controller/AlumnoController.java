@@ -38,10 +38,14 @@ public class AlumnoController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response listado() {
 		JSONObject respuestaAlumnos = new JSONObject();
+		/*
 		for(Alumno a: as.listar()) {
 			respuestaAlumno.append("alumnos", ParserObject.AlumnoToJSON(a));
 		}
 		return Response.status(200).entity(respuestaTitulaciones.toString()).build();
+		*/
+		
+		return null;
 	}
 
 
@@ -49,6 +53,8 @@ public class AlumnoController {
 	@Path("/datos/{idAlumno}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response datosAlumno(@PathParam("idAlumno") int id) {
+		
+		/*
 		try {
 			Alumno alumno = as.obtenerPorId(id);
 			JSONObject responseJSON = new JSONObject();
@@ -59,6 +65,10 @@ public class AlumnoController {
 			errorJSON.put("resultado", e.getMessage());
 			return Response.status(e.getHttpCode()).entity(errorJSON.toString()).build();
 		}
+		
+		*/
+		
+		return null;
 	}
 
 
@@ -66,6 +76,8 @@ public class AlumnoController {
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response borraAlumno(@PathParam("id") int idAlumno) {
+		
+		/*
 		try {
 			as.eliminar(idAlumno);
 			return Response.status(200).entity(true).build();
@@ -74,6 +86,10 @@ public class AlumnoController {
 			errorJSON.put("resultado", e.getMessage());
 			return Response.status(e.getHttpCode()).entity(errorJSON.toString()).build();
 		}
+		
+		*/
+		
+		return null;
 	}
 
 
@@ -102,6 +118,7 @@ public class AlumnoController {
 
 		Alumno alumno = ParserObject.JSONToAlumno(jsonRecibido);
 
+		/*
 		try {
 			as.alta(alumno);
 		} catch(ApiException e) {
@@ -114,6 +131,9 @@ public class AlumnoController {
 		respuestaJSON.put("alumno", ParserObject.AlumnoToJSON(alumno));
 
 		return Response.status(200).entity(respuestaJSON.toString()).build();
+		*/
+		
+		return null;
 	}
 
 
@@ -142,6 +162,7 @@ public class AlumnoController {
 
 		Alumno alumno = ParserObject.JSONToAlumno(jsonRecibido);
 
+		/*
 		try {
 			as.modificar(alumno);
 		} catch(ApiException e) {
@@ -154,6 +175,9 @@ public class AlumnoController {
 		respuestaJSON.put("alumno", ParserObject.AlumnoToJSON(alumno));
 
 		return Response.status(200).entity(respuestaJSON.toString()).build();
+		*/
+		
+		return null;
 	}
 	
 	
