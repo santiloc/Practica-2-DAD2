@@ -66,6 +66,7 @@
 					success: function (result) {
 						console.log(result);
 						load(result.titulacion.id, result.titulacion.nombre, result.titulacion.facultad);
+						$('id').val('');
 						$('#nombre').val('');
 						$('#facultad').val('');
 					},
@@ -125,9 +126,9 @@
 <body>
 	<h1>CRUD Titulacion</h1>
 	<br>
-	<a href="index.jsp">Volver a Alumnos</a>
+	<a href="index.jsp">Volver atrás</a>
 	<br><br>
-	Formulario para gestionar titulaciones.<br>
+	Formulario para gestionar titulaciones<br>
 	
 	Id:<input type=text id="id" readonly><br>
 	Nombre:<input type=text id="nombre"><br>

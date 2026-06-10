@@ -27,12 +27,7 @@ public class DataBaseTitulacion {
 	}
 	
 	public static boolean modificar(Titulacion titulacion) {
-		if(listaTitulacion.containsKey(titulacion.getId())) {
-			listaTitulacion.put(titulacion.getId(), titulacion);
-			return true;
-		}
-	
-		return false;
+		return listaTitulacion.replace(titulacion.getId(), titulacion) != null;
 	}
 
 	public static Titulacion dameTitulacionPorId(int id) {

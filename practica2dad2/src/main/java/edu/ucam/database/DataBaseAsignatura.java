@@ -24,6 +24,10 @@ public class DataBaseAsignatura {
 		listaAsignatura.put(asignatura.getId(), asignatura);
 		return true;
 	}
+	
+	public static boolean modificar(Asignatura asignatura) {
+		return listaAsignatura.replace(asignatura.getId(), asignatura) != null;
+	}
 
 	public static Asignatura dameAsignaturaPorId(int id) {
 		return listaAsignatura.get(id);
