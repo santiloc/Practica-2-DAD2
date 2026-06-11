@@ -2,32 +2,12 @@ package edu.ucam.utils;
 
 import org.json.JSONObject;
 
-import edu.ucam.beans.Alumno;
 import edu.ucam.beans.Asignatura;
+import edu.ucam.beans.Profesor;
 import edu.ucam.beans.Titulacion;
 
 public class ParserObject {
 
-	
-	public static Alumno JSONToAlumno(JSONObject alumnoJson) {
-		Alumno alumno = new Alumno();
-		
-		if(alumnoJson.has("id"))
-			alumno.setId(alumnoJson.getInt("id"));
-		alumno.setNombre(alumnoJson.getString("nombre"));
-		alumno.setApellido1(alumnoJson.getString("apellido1"));
-			
-		return alumno;
-	}
-	
-	public static JSONObject AlumnoToJSON(Alumno alu) {
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("id", alu.getId());
-		jsonObject.put("nombre", alu.getNombre());
-		jsonObject.put("apellido1", alu.getApellido1());
-	
-		return jsonObject;
-	}
 	
 	public static Titulacion JSONToTitulacion(JSONObject titulacionJson) {
 		Titulacion titulacion = new Titulacion();
@@ -64,6 +44,23 @@ public class ParserObject {
 		jsonObject.put("id", asig.getId());
 		jsonObject.put("nombre", asig.getNombre());
 		jsonObject.put("creditos", asig.getCreditos());
+		return jsonObject;
+	}
+	
+	public static Profesor JSONToProfesor(JSONObject profesorJson) {
+		Profesor profesor = new Profesor();
+		if(profesorJson.has("id"))
+			profesor.setId(profesorJson.getInt("id"));
+		profesor.setNombre(profesorJson.getString("nombre"));
+		profesor.setApellido(profesorJson.getString("apellido"));
+		return profesor;
+	}
+
+	public static JSONObject ProfesorToJSON(Profesor prof) {
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("id", prof.getId());
+		jsonObject.put("nombre", prof.getNombre());
+		jsonObject.put("apellido", prof.getApellido());
 		return jsonObject;
 	}
 	

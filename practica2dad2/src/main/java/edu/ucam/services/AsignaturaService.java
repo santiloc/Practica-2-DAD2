@@ -29,10 +29,11 @@ public class AsignaturaService {
 	}
 
 	public boolean modificar(Asignatura asignatura) throws NotFoundException {
-		if(DataBaseAsignatura.dameAsignaturaPorId(asignatura.getId()) == null) {
-			throw new NotFoundException("No existe la asignatura con id " + asignatura.getId() + " para modificar");
-		}
-		return DataBaseAsignatura.alta(asignatura);
+	    if(DataBaseAsignatura.dameAsignaturaPorId(asignatura.getId()) == null) {
+	        throw new NotFoundException("No existe la asignatura con id " + asignatura.getId() + " para modificar");
+	    }
+	    
+	    return DataBaseAsignatura.modificar(asignatura); 
 	}
 
 	public boolean eliminar(int id) throws NotFoundException {

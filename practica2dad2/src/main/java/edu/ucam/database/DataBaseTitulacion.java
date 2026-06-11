@@ -19,6 +19,11 @@ public class DataBaseTitulacion {
 		}
 		return false;
 	}
+	
+	public static boolean modificar(Titulacion titulacion) {
+		listaTitutulacion.put(titulacion.getId(), titulacion);
+		return true;
+	}
 
 	public static boolean alta(Titulacion titulacion) {
 		titulacion.setId(siguienteId());

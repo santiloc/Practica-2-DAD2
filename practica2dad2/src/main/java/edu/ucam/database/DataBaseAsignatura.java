@@ -18,6 +18,11 @@ public class DataBaseAsignatura {
 		}
 		return false;
 	}
+	
+	public static boolean modificar(Asignatura asignatura) {
+	    listaAsignatura.put(asignatura.getId(), asignatura);
+	    return true;
+	}
 
 	public static boolean alta(Asignatura asignatura) {
 		asignatura.setId(siguienteId());

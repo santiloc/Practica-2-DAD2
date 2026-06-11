@@ -192,6 +192,15 @@
 				</div>
 				<span class="card-link">Acceder</span>
 			</a>
+			
+			<a class="card" href="profesor.jsp">
+				<div>
+					<div class="card-icon red">&#x1F393;</div>
+					<div class="card-title">Profesor</div>
+					<div class="card-description">Gestiona los profesores de la universidad.</div>
+				</div>
+				<span class="card-link">Acceder</span>
+			</a>
 		</nav>
 
 		<footer>&copy; Universidad &middot; Panel de administraci&oacute;n</footer>
